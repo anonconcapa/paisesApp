@@ -1,0 +1,19 @@
+<h2>Por Capital</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <app-pais-input [placeholder]="placeholderCapital" (onEnter)="buscar($event)" (onDebounce)="sugerencias()"></app-pais-input>
+    </div>
+</div>
+
+<hr>
+<div *ngIf="hayError" class="alert alert-danger">No se encontró el termino {{termino}}</div>
+
+<div *ngIf="!hayError" class="row">
+    <div class="col">
+
+        <app-tabla [paises]="paises"></app-tabla>
+
+    </div>
+</div>
